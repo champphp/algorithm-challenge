@@ -1,9 +1,6 @@
-
-let countfib = 0
-let countfib2 = 0
+// fibonacci n(7) =  [1,1,2,3,5,8,13]
 
 function fib (n) {
-  countfib++
   if(n <= 2){
     return 1
   } else {
@@ -12,7 +9,6 @@ function fib (n) {
 }
 
 function fib2(n, memo={}) {
-  countfib2++
   if(n in memo) return memo[n] 
   if(n <= 2) return 1
 
@@ -24,6 +20,6 @@ const num = 13
 const result = fib(num)
 const result2 = fib2(num)
 
-console.log(`result ${num} = ${result}, time ${countfib}`)
-console.log(`result ${num} = ${result2}, time ${countfib2}`)
+console.log(`result ${num} = ${result}`)
+console.log(`result ${num} = ${result2}`)
 

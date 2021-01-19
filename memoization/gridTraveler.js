@@ -6,10 +6,7 @@
  * O(2^n+m) time
  * O(n+m) space
  */
-let countgridTraveler = 0
-let countgridTraveler2 = 0
 function gridTraveler(m,n) {
-  countgridTraveler++
   if(m === 0 || n === 0) {
     return 0
   }else if(m === 1 && n === 1) {
@@ -20,7 +17,6 @@ function gridTraveler(m,n) {
 }
 
 function gridTraveler2(m,n, memo={}) {
-  countgridTraveler2++
   const key = `${m},${n}`
   if(key in memo) return memo[key]
   if(m === 0 || n === 0) {
@@ -39,5 +35,5 @@ const result = gridTraveler(m , n)
 const result2 = gridTraveler2(m , n)
 
 
-console.log(`result size ${m} ${n} = ${result}, time ${countgridTraveler}`)
-console.log(`result size ${m} ${n} = ${result2}, time ${countgridTraveler2}`)
+console.log(`result size ${m} ${n} = ${result}`)
+console.log(`result size ${m} ${n} = ${result2}`)
