@@ -2,7 +2,7 @@
  * 1 gridTraveler มีกำหนดขนาดเส้นทาง กว้าง m , ยาว n 
  * การเกิดทางโดยเริ่มจาก บนซ้าย ไปถึงเป้าหมาย อยู่ที่ ล่างขวา 
  * และ การเดินจะมีได้ 2 ทาง ขวา, ล่าง
- * 2 คำนวณว่าจะเดินกี่ก้าวถึงเป้าหมาย
+ * 2 คำนวณว่าจะเดินกี่ก้าวถึงเป้าหมายได้กี่เส้นทาง
  * O(2^n+m) time
  * O(n+m) space
  */
@@ -33,8 +33,8 @@ function gridTraveler2(m,n, memo={}) {
   }
 }
 
-const m = 10
-const n = 10
+const m = 3
+const n = 3
 const result = gridTraveler(m , n)
 const result2 = gridTraveler2(m , n)
 
