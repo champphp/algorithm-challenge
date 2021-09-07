@@ -1,3 +1,14 @@
+import sys
+import os
+
+PACKAGE_PARENT = '..'
+SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
+sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
+
+from fun.load import load_numbers
+
+numbers = load_numbers(sys.argv[1])
+
 def merge_sort(list):
   if len(list) == 1:
     return list
@@ -5,7 +16,7 @@ def merge_sort(list):
   left_half, right_half = split(list)
   left = merge_sort(left_half)
   right = merge_sort(right_half)
-
+  # print("%15s %15s" % (left, right))
   return merge(left,right)
 
 def split(list):
@@ -54,14 +65,14 @@ def verify_sorted(list):
   if n == 0 or n == 1:
     return True
   
-  result = list[0] < list[1] and verify_sorted(list[1:])
+  result = list[0] <= list[1] and verify_sorted(list[1:])
   return result
 
-numbers = [54,62,93,17,77,31,44,55,20]
+# numbers = [54,62,93,17,77,31,44,55,20]
+print(numbers)
+# print( verify_sorted(numbers) )
+
 result = merge_sort(numbers)
 
-print(numbers)
-print( verify_sorted(numbers) )
-
 print(result)
-print( verify_sorted(result) )
+# print( verify_sorted(result) )
